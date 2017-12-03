@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="margin:0;">
+<html lang="en">
 
 <style>
 header {background-color: burlywood;}
@@ -26,14 +26,15 @@ header {background-color: burlywood;}
   </head>
 
 
-<body style="margin:0;">
+<body>
   <br/>
-<center>
-<img id="img" height="300" width="300" margin="float-right" placeholder="static/gray-img.png" border="5px"></img>
-<input type="file" id="input_file">
-<button class="upload" onclick="upload_file()">Upload</button>
-</center>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="static/function.js"></script>
+  <center>
+    <p><b>Choose an image file of a digit to upload</b></p>
+        <img id="img" height="300" width="300" margin="float-right" placeholder="static/gray-img.png" border="5px"></img>
+        <input type="file" id="input_file">
+        <button class="upload" onclick="upload_file()">Upload</button>
+  </center>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="static/function.js"></script>
 </body>
 </html>

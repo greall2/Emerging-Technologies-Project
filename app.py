@@ -69,25 +69,29 @@ def route():
 @app.route("/model", methods=['GET','POST'])
 def upload():
 	if request.method == 'POST':
-		print('in post')
+		# Adapted from https://www.reddit.com/r/learnpython/comments/6lqsrp/converting_a_dataurl_to_numpy_array/
+		# imported io module above which provides streams handling
 		image = request.values["image"]
 		imgstr = re.search(r'base64,(.*)', image).group(1)
 		print(image)
 		data = image.rsplit(',', 1)[1]
 		image_bytes = io.BytesIO(base64.b64decode(imgstr))
-		im = Image.open(image_bytes)
-		# Image.ANTIALIAS minimises distortion when representing a high-resolution image at a lower resolution
-		im = im.resize((28, 28), Image.ANTIALIAS)
+		image = Image.open(image_bytes)
+		# Image.ANTIALIAS reduces distortion of images
+		image = image.resize((28, 28), Image.ANTIALIAS)
+		
+		# adapted from https://stackoverflow.com/questions/7701429/efficient-evaluation-of-a-function-at-every-cell-of-a-numpy-array
+		#function to convert values to be between 0 & 1
 		def normalize(x):
-			return x / 256
+			return x / 155
 
 		normalize = np.vectorize(normalize, otypes=[np.float32])
-		ary = normalize(np.array(im, dtype=np.float32)[:,:,0])
+		ary = normalize(np.array(image, dtype=np.float32)[:,:,0])
 		ary = ary.flatten().tolist()
 		classification = sess.run(tf.argmax(y, 1), feed_dict={x: [ary]})
-		print('NN predicted', classification[0])
+		print('Predicted number:', classification[0])
 		return str(classification[0])
-	return "Opps something went wrong"
+	return "ERROR!! Something went wrong"
 
 
 if __name__ == "__main__":
