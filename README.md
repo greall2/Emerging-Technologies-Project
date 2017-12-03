@@ -24,3 +24,5 @@ In this project you will create a web application in Python to recognise digits 
 2. In the repository, create a web application that serves a HTML page as the root resource. The page should contain an input where the user can upload (or draw) an image containing a digit, and an area to display the image and the digit.
 3. Add a route to your application that accepts requests containing a user input image and responds with the digit.
 4. Connect the HTML page to the route using AJAX.
+
+[Link to Intructions](https://emerging-technologies.github.io/problems/project.html)
