@@ -10,6 +10,22 @@ This Assignment is a Webpage that when you upload a hand-written or likewise ima
 
 [Numpy](http://www.numpy.org/) is the fundamental package for scientific computing with Python. Numpy takes care of all the mathemetical functions for python. 
 
+[MNIST](http://yann.lecun.com/exdb/mnist/) dataset contains handwritten image files. It consists of a training set of 60,000 images and a test set which has 10,000 images. 
+
+## Running the Application
+#### 1. Git Clone this Repo
+#### 2. Using CMDER, direct into the folder repository
+#### 3. Run the python file by running the command:
+    
+     py app.py
+   
+#### 4. Go to the url given in cmder: 
+
+     http://127.0.0.1:5000/
+     
+#### 5. Upload a image of a handwritten digit or like the ones in the images folder
+
+
 ## Project Instructions
 
 The following are your instructions to complete the project for the module Emerging Technologies for 2017. This project is worth 40% of your marks for the module. Please see the course homepage for the deadline.
