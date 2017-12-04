@@ -83,7 +83,7 @@ def upload():
 		# adapted from https://stackoverflow.com/questions/7701429/efficient-evaluation-of-a-function-at-every-cell-of-a-numpy-array
 		#function to convert values to be between 0 & 1
 		def normalize(x):
-			return x / 155
+			return x / 255
 
 		normalize = np.vectorize(normalize, otypes=[np.float32])
 		ary = normalize(np.array(image, dtype=np.float32)[:,:,0])
